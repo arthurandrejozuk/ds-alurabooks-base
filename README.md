@@ -48,6 +48,12 @@ To do a one-off build, use `npm run build` or `yarn build`.
 
 To run tests, use `npm test` or `yarn test`.
 
+## Having errors using commands
+
+It's more likely to have some errors depending of the node version that you may be using, so try running this command first export
+
+`NODE_OPTIONS=--openssl-legacy-provider`
+
 ## Configuration
 
 Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
