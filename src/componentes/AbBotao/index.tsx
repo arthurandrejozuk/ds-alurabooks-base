@@ -1,23 +1,50 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+export interface AbBotaoProps {
+  texto?: string;
+  tipo?: 'primario' | 'secundario';
+  onClick?: () => void;
+}
+
+const Button = styled.button<AbBotaoProps>`
   font-family: 'Poppins', sans-serif;
   padding: 16px 32px;
-  color: #fff;
+  color: ${(props: AbBotaoProps) =>
+    props.tipo === 'primario' ? '#fff' : '#eb9b00'};
   font-weight: 700;
   font-size: 20px;
   font-style: bold;
-  background-color: #eb9b00;
+  background-color: ${(props: AbBotaoProps) =>
+    props.tipo === 'primario' ? '#eb9b00 ' : '#fff'};
   border: 2px solid #eb9b00;
   cursor: pointer;
   transition: 100ms;
-  &:hover {
-    background-color: #b87900;
-    border: 2px solid #b87900;
-  }
+  ${(props: AbBotaoProps) =>
+    props.tipo === 'primario'
+      ? css`
+          &:hover {
+            background-color: #b87900;
+            border: 2px solid #b87900;
+          }
+        `
+      : css`
+          &:hover {
+            background-color: #fff;
+            border: 2px solid #b87900;
+            color: #b87900;
+          }
+        `};
 `;
 
-export const AbBotao = () => {
-  return <Button>Clique aqui!</Button>;
+export const AbBotao = ({
+  texto,
+  tipo = 'primario',
+  onClick,
+}: AbBotaoProps) => {
+  return (
+    <Button tipo={tipo} onClick={onClick}>
+      {texto}
+    </Button>
+  );
 };
