@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import heart from '../../public/assets/img/Favoritos.png';
-import sacola from '../../public/assets/img/Sacola.png';
 import { AbBotao } from '../AbBotao';
 
 const Card = styled.div`
@@ -67,7 +65,13 @@ const Card = styled.div`
   }
 `;
 
-export const AbCard = () => {
+export const AbCard = ({
+  sacola,
+  heart,
+}: {
+  sacola?: string;
+  heart?: string;
+}) => {
   return (
     <Card>
       <div className="container__title">

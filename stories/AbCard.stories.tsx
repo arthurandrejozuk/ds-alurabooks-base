@@ -6,6 +6,6 @@ export default {
   component: AbCard,
 } as ComponentMeta<typeof AbCard>;
 
-const Template: ComponentStory<typeof AbCard> = () => <AbCard />;
+const Template: ComponentStory<typeof AbCard> = args => <AbCard {...args} />;
 
 export const Primario = Template.bind({});

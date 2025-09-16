@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import less from '../../public/assets/img/-.png';
-// import more from '../../public/assets/img/+.png';
 import styled from 'styled-components';
 
 const CampoQuantidade = styled.div`
@@ -24,8 +22,6 @@ const CampoQuantidade = styled.div`
 
 export const AbCampoQuantidade = () => {
   const [quantidade, setQuantidade] = useState<number>(1);
-
-  function click() {}
 
   return (
     <CampoQuantidade>
