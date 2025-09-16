@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import heart from '../../public/assets/img/Favoritos.png';
+import sacola from '../../public/assets/img/Sacola.png';
 import { AbBotao } from '../AbBotao';
 
 const Card = styled.div`
@@ -29,6 +31,7 @@ const Card = styled.div`
       gap: 24px;
       li {
         color: #002f52;
+        cursor: pointer;
       }
     }
   }
@@ -71,13 +74,10 @@ export const AbCard = () => {
         <h1>Sobre o livro:</h1>
         <ul>
           <li>
-            <img src="/assets/img/Sacola.png" alt="ícone de sacola" />
+            <img src={sacola} alt="ícone de sacola" />
           </li>
           <li>
-            <img
-              src="/assets/img/Favoritos.png"
-              alt="ícone de coração(salvar)"
-            />
+            <img src={heart} alt="ícone de coração(salvar)" />
           </li>
         </ul>
       </div>
@@ -91,7 +91,7 @@ export const AbCard = () => {
           <p>A partir de:</p>
           <h2>R$ 29,90</h2>
         </span>
-        <AbBotao />
+        <AbBotao texto="Comprar" />
       </div>
     </Card>
   );
